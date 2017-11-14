@@ -6,10 +6,15 @@ require("angular-animate");
 require("angular-touch");
 require("angular-ui-router");
 require("angular-ui-bootstrap");
+require("angucomplete-alt");
 require("./common/CommonModule");
+require("./common/factories/CommonBaseFactory");
+require("./common/factories/CommonFactory");
+require("./common/factories/CacheFactory");
 angular.module("RootModule", [
-    "ngSanitize", "ngAnimate", "ngTouch", "ui.router", "ui.bootstrap", "CommonModule"
+    "ngSanitize", "ngAnimate", "ngTouch", "ui.router", "ui.bootstrap", "angucomplete-alt",
+    "CommonModule"
 ]);
 require("./common/routeConfig");
-require("./common/rootCtrl");
-// import routeConfig from "common/routeConfig";
+require("./common/controllers/rootCtrl");
+require("./common/controllers/navbarCtrl");

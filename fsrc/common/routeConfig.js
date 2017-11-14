@@ -9,7 +9,7 @@
         let home = {
             name: "home",
             url: "/",
-            templateUrl: require("./templates/home.html")
+            templateUrl: "app/common/templates/home.html"
         };
 
         // ===============States Registration===============
