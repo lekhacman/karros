@@ -27,7 +27,12 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">Find</div>
-                        <!--<input type="text" id="keywords" class="form-control" placeholder="Find">-->
+                        <input type="text" id="keywords" class="form-control" placeholder="Find">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">Near</div>
                         <angucomplete-alt id="keywords"
                                           placeholder="Find"
                                           pause="400"
@@ -36,12 +41,6 @@
                                           remote-url-data-field="predictions"
                                           title-field="description"
                                           input-class="form-control form-control-small"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <div class="input-group-addon">Near</div>
-                        <input type="text" id="place" class="form-control" placeholder="Near">
                     </div>
                 </div>
                 <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>

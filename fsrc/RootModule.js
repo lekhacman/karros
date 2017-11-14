@@ -1,5 +1,6 @@
 "use strict";
 import "bootstrap/dist/css/bootstrap.css";
+import "angucomplete-alt/angucomplete-alt.css";
 import angular from "angular";
 require("angular-sanitize");
 require("angular-animate");
