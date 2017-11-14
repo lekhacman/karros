@@ -11,8 +11,7 @@ let gutil = require("gulp-util");
 let srcDir = "fsrc/";
 let publicDir = "public/";
 let appDir = publicDir + "app/";
-// let assetsDir = publicDir + "assets/";
-// let libDir = publicDir + "assets/lib/";
+
 // gulp.task("lint", function () {
 //     return gulp.src(publicDir + "app/**/*.js")
 //         .pipe(jshint())
@@ -27,7 +26,8 @@ gulp.task("static", function () {
     gulp.src(srcDir + "index.html")
         .pipe(htmlmin(htmlminOption))
         .pipe(gulp.dest(publicDir));
-    return gulp.src(srcDir + "**/templates/**/*.html")
+    gulp.src(srcDir + "favicon.png").pipe(gulp.dest(publicDir));
+    return gulp.src(`${srcDir}**/templates/**/*.html`)
         .pipe(htmlmin(htmlminOption))
         .pipe(gulp.dest(appDir));
 });
