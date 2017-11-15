@@ -27,16 +27,23 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">Find</div>
-                        <input type="text" id="keywords" class="form-control" placeholder="Find">
+                        <angucomplete-alt id="keywords"
+                                          placeholder="Find"
+                                          pause="400"
+                                          selected-object="keyword"
+                                          remote-url="/yelp/autocomplete?text="
+                                          remote-url-data-field="terms"
+                                          title-field="text"
+                                          input-class="form-control form-control-small"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">Near</div>
-                        <angucomplete-alt id="keywords"
-                                          placeholder="Find"
+                        <angucomplete-alt id="location"
+                                          placeholder="Location"
                                           pause="400"
-                                          selected-object="selectedObject"
+                                          selected-object="location"
                                           remote-url="/location?input="
                                           remote-url-data-field="predictions"
                                           title-field="description"
@@ -46,19 +53,13 @@
                 <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown" uib-dropdown>
-                    <a href="#" id="user-menu" uib-dropdown-toggle><span class="glyphicon glyphicon-user"></span>&nbsp User <span class="caret"></span></a>
-                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="user-menu">
-                        <li role="menuitem"><a href="" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span>&nbsp Logout</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" uib-dropdown>
+                <!--<li class="dropdown" uib-dropdown>
                     <a href="#" id="lang-menu" uib-dropdown-toggle><span class="glyphicon glyphicon-globe"></span><span class="caret"></span></a>
                     <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="lang-menu">
                         <li role="menuitem"><a href="" ng-click="changeLanguage('vi')">Tiếng Việt</a></li>
                         <li role="menuitem"><a href="" ng-click="changeLanguage('en')">English</a></li>
                     </ul>
-                </li>
+                </li>-->
                 <li><a href="mailto:mle29@csc.com?subject=[IPOS-Mock] Support me"><span class="glyphicon glyphicon-question-sign"></span>&nbsp Help</a></li>
             </ul>
         </div>

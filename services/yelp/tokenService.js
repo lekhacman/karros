@@ -1,6 +1,6 @@
 "use strict";
 const request = require("request");
-const requestP = require("request-promise");
+const requestP = require("request-promise-native");
 const config = require("../../resources/config");
 
 function tokenServices() {
@@ -14,7 +14,8 @@ function tokenServices() {
                 "grant_type": "client_credentials",
                 "client_id": yelpConfig.clientId,
                 "client_secret": yelpConfig.clientSecret
-            }
+            },
+            json: true
         };
         return requestP(options);
     }

@@ -1,11 +1,23 @@
 "use strict";
 const yelpBaseService = require("./yelpBaseService");
+const config = require("../../resources/config");
 
-function autocomplete() {
+function autocomplete(text) {
+    const autocompleteConfig = config.externalApi.yelp.autocomplete;
     const service = Object.create(yelpBaseService);
     service.name = "autocompleteService";
-
-    return service;
+    service.request = {
+        method: "GET",
+        json: true,
+        url: autocompleteConfig.url,
+        qs: {
+            text: text,
+        },
+        headers: service.headers || {}
+    };
+    return service.sendRequest();
 }
 
-module.exports = autocomplete();
+module.exports = {
+    search: autocomplete
+};

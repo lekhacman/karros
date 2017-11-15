@@ -1,19 +1,11 @@
 "use strict";
-const request = require("request");
-const config = require("../../resources/config");
+const autocompleteService = require("../../services/yelp/autocompleteService");
 
 function autocomplete(req, res, next) {
-    const placeConfig = config.externalApi.google.place;
-    let url = `${placeConfig.url}?key=${placeConfig.key}&input=${req.param("input")}`;
-    let options = {
-
-    };
-    request(url, (err, response, body) => {
-        // console.log(body);
-        if (err) {
-            next(err);
-        }
-        res.json(JSON.parse(body));
+    autocompleteService.search(req.param("text")).then(data => {
+        res.json(data);
+    }, err => {
+        next(err);
     });
 }
 module.exports = {

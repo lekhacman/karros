@@ -13,6 +13,9 @@ function externalApiConfig() {
             clientSecret: "qjxvGtEQQPaCSbFiQ8dm4WwGbBvtXbBaBZETb2KUZNEjqphLOainZnxgtAMaAiSX",
             oauth: {
                 url: "https://api.yelp.com/oauth2/token"
+            },
+            autocomplete: {
+                url: "https://api.yelp.com/v3/autocomplete"
             }
         }
     };
