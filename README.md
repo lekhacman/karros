@@ -10,6 +10,9 @@ Mimic Yelp challenge.
 2. Install dependencies. Open terminal at the project root directory then run
 
 	`npm install` or `yarn`
+3. Build project. From project root, run
 
-3. Start application by command `npm start` or `node bin/www` from root directory.
-4. Check the result by going to [http://localhost:3000](http://localhost:3000) from your favorite browser.
+    `gulp`
+    
+4. Start application by command `npm start` or `node bin/www` from root directory.
+5. Check the result by going to [http://localhost:3000](http://localhost:3000) from your favorite browser.
