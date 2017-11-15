@@ -1,9 +1,8 @@
 "use strict";
-const autocompleteService = require("../../services/yelp/autocompleteService");
-const searchService = require("../../services/yelp/searchService");
+const searchService = require("../../services/yelp/yelpSearchService");
 
 function autocomplete(req, res, next) {
-    autocompleteService.search(req.query).then(data => {
+    searchService.autocomplete(req.query).then(data => {
         res.json(data);
     }, err => {
         next(err);

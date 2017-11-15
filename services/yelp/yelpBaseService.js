@@ -19,7 +19,6 @@ function baseService() {
     }
     return {
         name: "baseService",
-        request: {},
         sendRequest: sendRequest
     };
 }
