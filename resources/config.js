@@ -16,6 +16,9 @@ function externalApiConfig() {
             },
             autocomplete: {
                 url: "https://api.yelp.com/v3/autocomplete"
+            },
+            search: {
+                url: "https://api.yelp.com/v3/businesses/search"
             }
         }
     };

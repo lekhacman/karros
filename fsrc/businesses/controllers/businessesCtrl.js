@@ -1,7 +1,7 @@
 "use strict";
 (function () {
-    navbarCtrl.$inject = ["$scope", "$http", "CONSTANTS"];
-    function navbarCtrl($scope, $http, CONSTANTS) {
+    businessesCtrl.$inject = ["$scope", "$http", "CONSTANTS"];
+    function businessesCtrl($scope, $http, CONSTANTS) {
         $scope.goHome = function goHome() {
             window.location = "/";
         };
@@ -13,5 +13,5 @@
             console.log($scope.keyword);
         };
     }
-    angular.module("RootModule").controller("navbarCtrl", navbarCtrl);
+    angular.module("RootModule").controller("businessesCtrl", businessesCtrl);
 })();

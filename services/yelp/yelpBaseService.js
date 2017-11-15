@@ -4,25 +4,17 @@ const tokenService = require("./tokenService");
 function baseService() {
     function sendRequest() {
         return new Promise((resolve, reject) => {
-            if (!this.request.headers || !this.request.headers.authorization) {
-                tokenService.getToken().then(authen => {
-                    this.request.headers.authorization = `${authen.token_type} ${authen.access_token}`;
-                    return requestP(this.request).then(result => {
-                        result.token = authen.access_token;
-                        resolve(result);
-                    }, err => {
-                        console.error(err);
-                        reject(err);
-                    });
-                });
-            } else {
+            tokenService.getToken().then(authen => {
+                this.request.headers = this.request.headers || {};
+                this.request.headers.authorization = `${authen.token_type} ${authen.access_token}`;
                 return requestP(this.request).then(result => {
+                    result.token = authen.access_token;
                     resolve(result);
                 }, err => {
                     console.error(err);
                     reject(err);
                 });
-            }
+            });
         });
     }
     return {

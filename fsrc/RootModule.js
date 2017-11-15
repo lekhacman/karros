@@ -19,3 +19,4 @@ angular.module("RootModule", [
 require("./common/routeConfig");
 require("./common/controllers/rootCtrl");
 require("./common/controllers/navbarCtrl");
+require("./businesses/controllers/businessesCtrl");

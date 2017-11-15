@@ -10,5 +10,6 @@ router.get('/', function(req, res, next) {
 });
 router.get("/location", googleController.locationSearch);
 router.get("/yelp/autocomplete", yelpController.autocomplete);
+router.get("/yelp/search", yelpController.search);
 
 module.exports = router;

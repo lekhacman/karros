@@ -2,16 +2,17 @@
 const yelpBaseService = require("./yelpBaseService");
 const config = require("../../resources/config");
 
-function autocomplete(params) {
-    const autocompleteConfig = config.externalApi.yelp.autocomplete;
+function search(params) {
+    const searchConfig = config.externalApi.yelp.search;
     const service = Object.create(yelpBaseService);
-    service.name = "autocompleteService";
+    service.name = "searchService";
     service.request = {
         method: "GET",
         json: true,
-        url: autocompleteConfig.url,
+        url: searchConfig.url,
         qs: {
-            text: params.text,
+            term: params.term,
+            location: params.location
         },
         headers: service.headers || {}
     };
@@ -19,5 +20,5 @@ function autocomplete(params) {
 }
 
 module.exports = {
-    search: autocomplete
+    search: search
 };

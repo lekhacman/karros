@@ -27,7 +27,7 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">Find</div>
-                        <angucomplete-alt id="keywords"
+                        <angucomplete-alt id="keyword"
                                           placeholder="Find"
                                           pause="400"
                                           selected-object="keyword"
@@ -50,16 +50,9 @@
                                           input-class="form-control form-control-small"/>
                     </div>
                 </div>
-                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                <button class="btn btn-default" type="submit" ng-click="search()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <!--<li class="dropdown" uib-dropdown>
-                    <a href="#" id="lang-menu" uib-dropdown-toggle><span class="glyphicon glyphicon-globe"></span><span class="caret"></span></a>
-                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="lang-menu">
-                        <li role="menuitem"><a href="" ng-click="changeLanguage('vi')">Tiếng Việt</a></li>
-                        <li role="menuitem"><a href="" ng-click="changeLanguage('en')">English</a></li>
-                    </ul>
-                </li>-->
                 <li><a href="mailto:mle29@csc.com?subject=[IPOS-Mock] Support me"><span class="glyphicon glyphicon-question-sign"></span>&nbsp Help</a></li>
             </ul>
         </div>

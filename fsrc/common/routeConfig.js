@@ -11,9 +11,16 @@
             url: "/",
             templateUrl: "app/common/templates/home.html"
         };
+        let businesses = {
+            name: "businesses",
+            url: "/businesses",
+            templateUrl: "app/businesses/businesses.html",
+            controller: "businessesCtrl"
+        };
 
         // ===============States Registration===============
-        $stateProvider.state(home);
+        $stateProvider.state(home)
+            .state(businesses);
         // Fallback
         $urlRouterProvider.otherwise("/");
     }
