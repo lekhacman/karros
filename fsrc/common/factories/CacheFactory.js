@@ -5,6 +5,11 @@
 
         let cacheFactory = Object.create(CommonBaseFactory);
         cacheFactory.name = "CacheFactory";
+        cacheFactory.search = {
+            businessData: {
+
+            }
+        };
 
         return cacheFactory;
     }

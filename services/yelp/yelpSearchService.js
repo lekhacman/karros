@@ -12,7 +12,9 @@ function search(params) {
         url: searchConfig.url,
         qs: {
             term: params.term,
-            location: params.location
+            location: params.location,
+            limit: 10,
+            offset: params.offset
         },
         headers: service.headers || {}
     };
