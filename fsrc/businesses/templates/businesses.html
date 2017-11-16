@@ -4,7 +4,26 @@
         <hr>
     </div>
     <div class="row">
-        <div class="row" ng-repeat="b in businesses">
+        <p>Filter:</p>
+        <div>
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <input type="text" id="rating" ng-model="search.rating">
+            </div>
+            <div class="form-group">
+                <label>Price</label><br>
+                $
+                <input type="radio" name="price" ng-model="search.price" value="$">
+                $$
+                <input type="radio" name="price" ng-model="search.price" value="$$">
+                $$$
+                <input type="radio" name="price" ng-model="search.price" value="$$$">
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="row" ng-repeat="b in businesses | filter:search:strict">
             <div class="col-sm-4">
                 <img ng-src="{{b.image_url}}" style="width: 100%">
             </div>

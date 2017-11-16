@@ -13,9 +13,6 @@ import CryptoJS from "crypto-js";
                 return hash.toString(CryptoJS.enc.Hex);
             }
         }
-        function hashObj(obj) {
-            return window.btoa(JSON.stringify(obj));
-        }
         function searchBusinesses(offset) {
             let query = new queryModel($stateParams.term, $stateParams.location);
             let id = query.id;
