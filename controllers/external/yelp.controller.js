@@ -9,7 +9,11 @@ function autocomplete(req, res, next) {
     });
 }
 function search(req, res, next) {
-
+    searchService.search(req.query).then(data => {
+        res.json(data);
+    }, err => {
+        res.json({});
+    });
 }
 module.exports = {
     autocomplete: autocomplete,

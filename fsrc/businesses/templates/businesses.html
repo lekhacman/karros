@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <h1>Businesses</h1>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="row" ng-repeat="b in businesses">
+            <div class="col-sm-4">
+                <img ng-src="{{b.image_url}}" style="width: 100%">
+            </div>
+            <div class="col-sm-8">
+                <h3>{{b.name}}</h3>
+                <p>Rating: {{b.rating}} - {{b.review_count}} reviews</p>
+                <p>Price: {{b.price}}</p>
+                <p>Address: {{b.location.address1}}, {{b.location.city}}</p>
+                <p>Phone: {{b.display_phone}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+    </div>
+</div>

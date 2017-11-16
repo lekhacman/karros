@@ -11,7 +11,7 @@ function baseService() {
                     result.token = authen.access_token;
                     resolve(result);
                 }, err => {
-                    console.error(err);
+                    // console.error(err);
                     reject(err);
                 });
             });

@@ -13,8 +13,8 @@
         };
         let businesses = {
             name: "businesses",
-            url: "/businesses",
-            templateUrl: "app/businesses/businesses.html",
+            url: "/businesses?term&location",
+            templateUrl: "app/businesses/templates/businesses.html",
             controller: "businessesCtrl"
         };
 

@@ -4,7 +4,9 @@
     angular.module("CommonModule", []);
     const constants = {
         YELP:{
-
+            SEARCH: {
+                URL: "yelp/search"
+            }
         },
         GOOGLE:{
         }

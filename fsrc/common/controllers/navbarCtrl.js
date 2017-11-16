@@ -1,7 +1,7 @@
 "use strict";
 (function () {
-    navbarCtrl.$inject = ["$scope", "$http", "CONSTANTS"];
-    function navbarCtrl($scope, $http, CONSTANTS) {
+    navbarCtrl.$inject = ["$scope", "$state"];
+    function navbarCtrl($scope, $state) {
         $scope.goHome = function goHome() {
             window.location = "/";
         };
@@ -9,8 +9,10 @@
             // $translate.use(lang);
         };
         $scope.search = function () {
-            console.log($scope.location);
-            console.log($scope.keyword);
+            $state.go("businesses", {
+                term: $scope.keyword.title,
+                location: $scope.location.title
+            });
         };
     }
     angular.module("RootModule").controller("navbarCtrl", navbarCtrl);
