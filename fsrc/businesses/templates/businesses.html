@@ -18,6 +18,7 @@
         </div>
     </div>
     <div class="row">
-        <ul uib-pagination total-items="totalBusinesses" ng-model="currentPage" ng-change="pageChanged()"></ul>
+        <ul uib-pagination total-items="totalBusinesses" ng-model="currentPage" ng-change="pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" force-ellipses="true"></ul>
+        <!--<ul uib-pagination total-items="totalBusinesses" ng-model="currentPage" ng-change="pageChanged()"></ul>-->
     </div>
 </div>

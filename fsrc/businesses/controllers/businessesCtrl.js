@@ -2,10 +2,7 @@
 (function () {
     businessesCtrl.$inject = ["$scope", "$stateParams", "$http", "CONSTANTS", "CacheFactory"];
     function businessesCtrl($scope, $stateParams, $http, CONSTANTS, CacheFactory) {
-        // Init stage: search businesses
         function searchBusinesses(offset) {
-            console.log($scope.location);
-            console.log($scope.keyword);
             const config = {
                 params: {
                     term: $stateParams.term,
@@ -24,16 +21,18 @@
                     let result = data.data;
                     CacheFactory.search.businessData[offset] = result;
                     $scope.businesses = result.businesses;
-                    $scope.totalBusinesses = result.total;
+                    // Yelp API does not allow offset > 1000
+                    $scope.totalBusinesses = (result.total > 1000) ? 1000 : result.total;
                     return result;
                 }, err => {
                     console.error(err);
                 });
             }
         }
+        // Init stage: search businesses
         searchBusinesses(0);
         $scope.currentPage = 1;
-        $scope.maxSize = 10;
+        $scope.maxSize = 5;
         $scope.pageChanged = function() {
             console.log('Page changed to: ' + $scope.currentPage);
             searchBusinesses(($scope.currentPage - 1) * 10);

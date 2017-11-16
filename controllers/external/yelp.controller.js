@@ -12,7 +12,7 @@ function search(req, res, next) {
     searchService.search(req.query).then(data => {
         res.json(data);
     }, err => {
-        res.json({});
+        res.status(400).end();
     });
 }
 module.exports = {
