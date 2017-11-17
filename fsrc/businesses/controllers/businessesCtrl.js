@@ -27,7 +27,7 @@ import CryptoJS from "crypto-js";
                 return new Promise(resolve => {
                     let cachedResult = CacheFactory.search.businessData[id][offset];
                     $scope.businesses = cachedResult.businesses;
-                    $scope.totalBusinesses = (cachedResult.total > 1000) ? 1000 : result.total;
+                    $scope.totalBusinesses = (cachedResult.total > 1000) ? 1000 : cachedResult.total;
                     resolve(cachedResult);
                 });
             } else {
