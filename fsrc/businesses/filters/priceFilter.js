@@ -5,13 +5,9 @@
             if (!input || !input.price) {
                 return bs;
             }
-            let output = [];
-            for (let b of bs) {
-                if(b.price === input.price) {
-                    output.push(b);
-                }
-            }
-            return output;
+            return bs.filter((b) => {
+                return b.price === input.price;
+            });
         }
     }
     angular.module("RootModule").filter("price", price);
