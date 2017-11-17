@@ -8,22 +8,24 @@
         <div>
             <div class="form-group">
                 <label for="rating">Rating</label>
-                <input type="text" id="rating" ng-model="search.rating">
+                <input type="text" id="rating" ng-model="fil.rating">
             </div>
             <div class="form-group">
                 <label>Price</label><br>
+                All
+                <input type="radio" name="price" ng-model="fil.price" value="">
                 $
-                <input type="radio" name="price" ng-model="search.price" value="$">
+                <input type="radio" name="price" ng-model="fil.price" value="$">
                 $$
-                <input type="radio" name="price" ng-model="search.price" value="$$">
+                <input type="radio" name="price" ng-model="fil.price" value="$$">
                 $$$
-                <input type="radio" name="price" ng-model="search.price" value="$$$">
+                <input type="radio" name="price" ng-model="fil.price" value="$$$">
             </div>
         </div>
         <hr>
     </div>
     <div class="row">
-        <div class="row" ng-repeat="b in businesses | filter:search:strict">
+        <div class="row" ng-repeat="b in businesses | filter:fil:strict | price:fil">
             <div class="col-sm-4">
                 <img ng-src="{{b.image_url}}" style="width: 100%">
             </div>
